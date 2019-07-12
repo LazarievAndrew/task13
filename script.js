@@ -3,32 +3,29 @@
 // и будет возвращать Ф.И.О в правильном регистре. 
 // Ф.И.О - нужно запросить у пользователя.
 
-function properTreatment(){
+var name = prompt('Введите фамилию имя отчество:');
 
-    var name = prompt('Введите фамилия имя отчество:');
+function properTreatment(x){
+
     var name1 = '';
-    var n = '';
+    var n;
 
-    for (var i = 0; i < name.length; i++ ){
+    for (var i = 0; i < x.length; i++ ){
 
-        if (i === 0){
+        if (!i || !isNaN(+x[i - 1])){  //как вариант после || x[i - 1] === ' '
 
-            n = name[i].toUpperCase();
-
-        } else if (name[i - 1] === ' ') {
-
-            n = name[i].toUpperCase();
+            n = x[i].toUpperCase();
 
         } else {
 
-            n = name[i].toLowerCase();
+            n = x[i].toLowerCase();
 
         }
 
         name1 += n;
     }
 
-    alert (name1);
+    return name1;
 }
 
-properTreatment();
+alert (properTreatment(name));
