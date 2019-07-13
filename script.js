@@ -5,27 +5,17 @@
 
 var name = prompt('Введите фамилию имя отчество:');
 
-function properTreatment(x){
+function correctEntry(x){
 
-    var name1 = '';
-    var n;
+    var arr = x.split(' ');
 
-    for (var i = 0; i < x.length; i++ ){
+    var newArr = arr.map(function(item){
+        return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() ;
+    })
+    
+    var newArr = newArr.join(' ');
 
-        if (!i || !isNaN(+x[i - 1])){  //как вариант после || x[i - 1] === ' '
-
-            n = x[i].toUpperCase();
-
-        } else {
-
-            n = x[i].toLowerCase();
-
-        }
-
-        name1 += n;
-    }
-
-    return name1;
+    return newArr;
 }
 
-alert (properTreatment(name));
+alert(correctEntry(name));
