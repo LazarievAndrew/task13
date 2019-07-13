@@ -13,7 +13,7 @@ function correctEntry(x){
         return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() ;
     })
     
-    var newArr = newArr.join(' ');
+    newArr = newArr.join(' ');
 
     return newArr;
 }
