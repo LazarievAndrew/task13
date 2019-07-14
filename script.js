@@ -15,9 +15,8 @@ function correctEntry(x){
     // var newArr = arr.map(function(item){
     //     return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() ;
     // })
-    // newArr = newArr.join(' ');
-    // return newArr;
-
+    // var str = newArr.join(' ');
+    
 
     //Через цикл:
 
@@ -25,9 +24,9 @@ function correctEntry(x){
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase() ;
     }
     
-    arr = arr.join(' ');
+    var str = arr.join(' ');
 
-    return arr;
+    return str;
 }
 
 alert(correctEntry(name));
