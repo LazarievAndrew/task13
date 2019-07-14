@@ -9,13 +9,25 @@ function correctEntry(x){
 
     var arr = x.split(' ');
 
-    var newArr = arr.map(function(item){
-        return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() ;
-    })
     
-    newArr = newArr.join(' ');
+    // Вариант через map:
 
-    return newArr;
+    // var newArr = arr.map(function(item){
+    //     return item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() ;
+    // })
+    // newArr = newArr.join(' ');
+    // return newArr;
+
+
+    //Через цикл:
+
+    for(var i = 0; i < arr.length; i++){
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase() ;
+    }
+    
+    arr = arr.join(' ');
+
+    return arr;
 }
 
 alert(correctEntry(name));
